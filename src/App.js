@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/Layout/NavBar/NavBar';
+import { Row, 
+        Col,
+        Form,
+        Input,
+        Container,
+      } from 'reactstrap';
 
-function App() {
+import SideBar from './components/Layout/SideBar/SideBar';
+import Recipe from './components/RecipeBuilder/Recipe/Recipe';
+
+
+const app = () =>  {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Container>
+      <Row>
+      <Col md="8">      
+      <h1> Find the recipe that best fits for you.</h1>
+      <Form>
+        <Input name="recipe" placeholder="Search the recipe."/>
+      </Form>
+      <br/>
+      <Row>
+        <Col md="12">
+          <Recipe/>
+        </Col>
+      </Row>
+      </Col>
+      <Col md="4">
+        <br/>
+        <SideBar/>
+      </Col>
+      </Row>
+      <br/>
+      </Container>
     </div>
   );
 }
 
-export default App;
+export default app;
