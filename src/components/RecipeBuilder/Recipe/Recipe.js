@@ -16,7 +16,7 @@ const Recipe = (props) => {
     
     //fetching recipe from API
     useEffect( () => {
-        axios.get("http://pookbook.herokuapp.com/getAllRecipe")
+        axios.get("https://pookbook.herokuapp.com/getAllRecipe")
         .then( res => setRecipe(res.data));
     },[])
 
