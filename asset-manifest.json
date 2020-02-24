@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pookbook-client/static/css/main.d1b05096.chunk.css",
+    "main.js": "/pookbook-client/static/js/main.58390a3c.chunk.js",
+    "main.js.map": "/pookbook-client/static/js/main.58390a3c.chunk.js.map",
+    "runtime-main.js": "/pookbook-client/static/js/runtime-main.93847314.js",
+    "runtime-main.js.map": "/pookbook-client/static/js/runtime-main.93847314.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/pookbook-client/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.16468cd4.chunk.js": "/pookbook-client/static/js/2.16468cd4.chunk.js",
+    "static/js/2.16468cd4.chunk.js.map": "/pookbook-client/static/js/2.16468cd4.chunk.js.map",
+    "index.html": "/pookbook-client/index.html",
+    "precache-manifest.6b40507433c530416bb2d593cbcacb24.js": "/pookbook-client/precache-manifest.6b40507433c530416bb2d593cbcacb24.js",
+    "service-worker.js": "/pookbook-client/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/pookbook-client/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.d1b05096.chunk.css.map": "/pookbook-client/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.16468cd4.chunk.js.LICENSE.txt": "/pookbook-client/static/js/2.16468cd4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93847314.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.16468cd4.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.58390a3c.chunk.js"
+  ]
+}
