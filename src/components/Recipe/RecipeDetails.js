@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from 'react';
-import parse from 'html-react-parser';
+import Parser from 'html-react-parser';
 
 import {
     Card,
@@ -57,7 +57,7 @@ const RecipeDetails = (props) => {
 
                 <CardSubtitle>INSTRUCTIONS:</CardSubtitle>
                 <CardText>
-                    {parse(recipeDetails.description)}
+                    {Parser(recipeDetails.description)}
                 </CardText>
                 <Button  className="btn btn-md" color="primary" style={{alignItems:'center'}}>CLICK TO START COOKING WITH US..</Button>
                 </CardBody>

@@ -19,7 +19,7 @@ const RecipeCard = (props) => {
             <CardBody>
                 <Row>
                     <Col md="3">
-                        <CardImg style={{ height: '130px' }} top width="100%" src={recipe.imageUrl} alt="Card image cap" />
+                        <CardImg style={{ height: '130px' }} top width="100%" src={recipe.imageUrl} alt={recipe.dishName} />
                     </Col>
                     <Col md="9">
                         <CardTitle><h5>{recipe.dishName}</h5></CardTitle>

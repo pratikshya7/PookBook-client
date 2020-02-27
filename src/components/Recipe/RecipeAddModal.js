@@ -1,5 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Select from 'react-select';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; 
+
 import {Button,
      Modal, 
      ModalBody, 
@@ -61,6 +64,12 @@ const RecipeAddModal = (props) => {
         }
     }
 
+    const descriptionChangeHandler = (value) => {
+        let temp = recipeToPost;
+        recipeToPost.description =value;
+        setRecipeToPost(temp);
+    }
+
     const ingredientNameChangeHandler = (event) => {
         setIngredientName(event.target.value);
     }
@@ -70,7 +79,7 @@ const RecipeAddModal = (props) => {
     }
 
     const addIngredientHandler = () => {
-        let temp= recipeToPost;
+        let temp= {...recipeToPost};
         temp.ingredients.push({
             'name':ingredientName,
             'quantity':ingredientValue,
@@ -81,10 +90,10 @@ const RecipeAddModal = (props) => {
     }
 
     const optionsMealType = [
-        {value:'breakfast', label:'Breakfast'},
-        {value:'lunch', label:'Lunch'},
-        {value:'dinner', label:'Dinner'},
-        {value:'snacks', label:'Snacks'},
+        {value:'Breakfast', label:'Breakfast'},
+        {value:'Lunch', label:'Lunch'},
+        {value:'Dinner', label:'Dinner'},
+        {value:'Snacks', label:'Snacks'},
 
     ]
 
@@ -108,7 +117,6 @@ const RecipeAddModal = (props) => {
         <Fragment>
              <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader toggle={toggle}>Let your recipe be the taste of our kitchen!</ModalHeader>
-                 
                     <Form onSubmit={recipeFormSubmitHandler}>
                     <ModalBody>
                         {/* DishName */}
@@ -141,6 +149,12 @@ const RecipeAddModal = (props) => {
                             <Input type="number" name="serves" placeholder="2 people" onChange={singleInputChangeHandler}/>
                         </FormGroup>
 
+                        {/* Image URL*/}
+                        <FormGroup>
+                            <Label for="imageUrl">Image URL</Label>
+                            <Input type="text" name="imageUrl" placeholder="https://google.com/dishImage" onChange={singleInputChangeHandler}/>
+                        </FormGroup>                       
+
                         {/* Meal Type*/} 
                          <FormGroup>
                              <Label for="mealType">Select Meal Type </Label>
@@ -157,7 +171,7 @@ const RecipeAddModal = (props) => {
                                 <Input type="text" name="ingredientValue" value={ingredientValue} placeholder="Quantity" onChange={ingredientValueChangeHandler}/>
                                 </Col>
                                 <Col md="2">
-                                    <Button color="success" onClick={addIngredientHandler}>ADD</Button>
+                                    <Button color="success" onClick={addIngredientHandler} name='ingredients'>ADD</Button>
                                 </Col>
                             </Row>                       
                         </FormGroup>
@@ -174,14 +188,13 @@ const RecipeAddModal = (props) => {
                             <tbody>
                                 {ingredientList}
                             </tbody>
-
                         </Table>
                         <hr/>
 
                         {/* Instructions to cook */}
                         <FormGroup>
                             <Label for="description">Instructions</Label>
-                            <Input type="textarea" placeholder="Let's begin with how to prep for the dish." onChange={singleInputChangeHandler}/>
+                            <ReactQuill name="description" onChange={descriptionChangeHandler} value={recipeToPost.description}/>
                         </FormGroup>
                 </ModalBody>
                  <ModalFooter>

@@ -4,6 +4,7 @@ import AppConstants from '../_constants/appConstants';
 export const recipeService = {
     GetAllRecipes,
     AddNewRecipe,
+    DeleteRecipe,
 }
 
 //service to return all the recipe from firebase database.
@@ -20,3 +21,7 @@ function AddNewRecipe(recipeToPost){
     .catch(err => console.log(err))
 }
 
+//service to delete recipe from the database
+function DeleteRecipe(){
+
+}
