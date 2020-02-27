@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Nav,
     Button,
 } from 'reactstrap';
+import RecipeAddModal from '../Recipe/RecipeAddModal';
+
 
 const SideBar = () => {
+    const [addRecipeClicked, setAddRecipeClicked] = useState(false);
+    const [toggleModal, setToggleModal] = useState(false);
+
+    const addRecipeHandler = () => {
+        setAddRecipeClicked(true);
+        setToggleModal(!toggleModal);
+        console.log(addRecipeClicked);
+    };
 
     return (
         <Nav vertical pills>
@@ -31,7 +41,8 @@ const SideBar = () => {
                 <option>2 plus hours</option>
             </select>
             <br/>
-            <Button block color="success">ADD RECIPE</Button>
+            <Button block color="success" onClick={ () => addRecipeHandler()}>ADD RECIPE</Button>
+                {addRecipeClicked ? <RecipeAddModal clicked={toggleModal}/> : null}
      </Nav>
     )
 }

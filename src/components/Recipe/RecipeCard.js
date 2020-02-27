@@ -27,7 +27,14 @@ const RecipeCard = (props) => {
                             <i>Serves: {recipe.serves} | Prep Time: {recipe.prepTime} | Cooking Time: {recipe.cookTime}</i>
                         </CardSubtitle>
                         <br/>
-                        <Link className="btn btn-info" to="/details">View Details</Link>
+                        <Link 
+                            className="btn btn-info" 
+                            to={{
+                                pathname: "/details",
+                                state:{
+                                    recipeDetails:recipe,
+                                }
+                            }}>View Details</Link>
                     </Col>
                 </Row>
             </CardBody>

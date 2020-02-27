@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import GetAllRecipes from '../../_services/recipeService';
+import {recipeService} from '../../_services/recipeService';
 import RecipeCard from './RecipeCard';
 import {
     Input,
@@ -10,11 +10,11 @@ const Home = (props) => {
     const [recipeFilteredValue, setRecipeFilteredValue] = useState([])
 
     useEffect(()=> {
-        GetAllRecipes().then(rec => {
-            console.log('Recipe is ', rec);
+        recipeService.GetAllRecipes().then(rec => {
+            //console.log('Recipe is ', rec);
             setRecipe(rec);
             setRecipeFilteredValue(rec);
-        })
+        });
     }, []);
 
     const searchInputChangeHandler = (event) => {
@@ -29,6 +29,7 @@ const Home = (props) => {
                 {recipeFilteredValue.map( r => 
                 <div key={r.dishName}>
                     <RecipeCard recipe={r}/>
+                    <br/>
                 </div>
             )}
         </React.Fragment>
