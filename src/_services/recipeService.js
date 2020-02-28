@@ -22,6 +22,8 @@ function AddNewRecipe(recipeToPost){
 }
 
 //service to delete recipe from the database
-function DeleteRecipe(){
-
+function DeleteRecipe(deleteItem){
+    return axios.delete(AppConstants.apiURL + '/deleteRecipe', {params:{deleteItem : deleteItem}})
+    .then( (res) => res.data)
+    .catch(err => console.log(err))
 }

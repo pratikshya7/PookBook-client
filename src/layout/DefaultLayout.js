@@ -11,6 +11,8 @@ import NavBar from '../components/NavBar/NavBar';
 import SideBar from '../components/SideBar/SideBar';
 import Home from '../components/Recipe/Home';
 import RecipeDetails from '../components/Recipe/RecipeDetails';
+import About from '../components/About/About';
+import ContactUs from '../components/ContactUs/ContactUs';
 //import RecipeAdd from '../components/Recipe/RecipeAddModal';
 
  const hist = createBrowserHistory();
@@ -27,6 +29,8 @@ const DefaultLayout = () => {
                                 <Route path="/details" component={RecipeDetails}/>
                                 {/* <Route path="/addRecipe" component={RecipeAdd}/> */}
                                 <Route exact path="/" component={Home}/>
+                                <Route exact path="/about" component={About}/>
+                                <Route exact path="/contactUs" component={ContactUs}/>
                              </Switch>
                          </Router>  
                         <br/>
