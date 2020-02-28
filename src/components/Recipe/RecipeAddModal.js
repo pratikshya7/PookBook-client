@@ -3,6 +3,7 @@ import Select from 'react-select';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 
+
 import {Button,
      Modal, 
      ModalBody, 
@@ -46,7 +47,10 @@ const RecipeAddModal = (props) => {
             recipeService.AddNewRecipe(recipeToPost).then(res => {
             console.log(res);
            })
-           .catch(err => console.log('Error Occurred.' + err))
+           .catch(err => console.log('Error Occurred.' + err));
+           alert("Your recipe has been added to the database. For now refresh the page.");
+           setModal(!modal);
+           //props.history.push('/home');
        };
 
     const singleInputChangeHandler = (e) => {
